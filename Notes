@@ -1,0 +1,124 @@
+ for install sass /.scss ----> npm i sass
+ for react icons install ----> npm i react-icons
+ for install framer-motion ---> npm i framer-motion
+
+CONTEXT API:
+ The Context API in React is a built-in feature that allows you to share data across multiple components without having to pass props manually through every level of the component tree.
+ It’s mainly used for state management when you need to provide global data like user info, themes, or app settings.
+
+ Why Context API?
+
+Normally, data flows top-down through props. But if a deeply nested component needs access to some data, you’d have to pass props through multiple layers — this is called “prop drilling.”
+The Context API solves this problem by creating a shared data store that any component can access directly.
+
+STEPS:
+1. Create a Context.
+2. Provide the Context (Wrap Components)
+3. Consume the Context  (Using useContext hook)
+
+WHEN TO USE Context API :
+Theme (dark/light mode)
+User authentication info
+Language/localization
+App-wide settings
+
+REDUCER IN REACT
+-------------------
+Redux is a powerful state management library for React applications. In normal React, when the state is small, it’s easy to manage it inside individual components. But as the app grows, you need to share state between multiple components. That’s where Redux becomes useful.
+
+✅ Why Redux?
+
+To achieve centralized state management in the application
+To share data between components
+To get predictable state updates
+To make debugging easier
+
+✅ Main parts of Redux
+1️⃣ Store
+This is the central store that holds the entire application’s state.
+Usually, you have a single store.
+
+2️⃣ Actions
+
+Simple JavaScript objects used to request state changes.
+Every action has a type.
+
+Example:
+
+{ type: "INCREMENT" }
+
+3️⃣ Reducers
+
+Functions that decide how the state should be updated.
+Note: Reducers must be pure functions.
+
+Example reducer:
+
+const counterReducer = (state = 0, action) => {
+  if(action.type === "INCREMENT"){
+    return state + 1;
+  }
+  return state;
+};
+
+4️⃣ Dispatch
+
+Used to send an action to the store.
+
+5️⃣ Subscribe
+
+Used to detect when the store updates
+(in React we use useSelector instead).
+
+✅ Using Redux in React
+
+useSelector() → Read state from the store
+
+useDispatch() → Dispatch actions
+
+🔄 Redux flow in a single sentence:
+
+UI → Action → Reducer → Store Update → UI re-render
+
+✅ Example flow (Simple English)
+
+User clicks a button (UI)
+
+Action is dispatched → { type: "ADD_TO_CART" }
+
+The reducer checks the action and updates the state
+
+Store saves the new state
+
+UI updates automatically
+
+✅ Summary (Simple English)
+
+Redux helps manage state in React through a central store.
+When you dispatch an action, the reducer updates the state, the store saves it, and React automatically refreshes the UI with the new state.
+
+action.payload = The data you send to the reducer when dispatching an action.
+
+BrowserRouter:
+*******************
+ is a component from the react-router-dom library that enables routing in a React application.
+It uses the browser’s History API to keep the UI in sync with the URL.
+
+ It acts like a wrapper for your entire app, so that routing can work properly.
+You must wrap your app (or main component) inside BrowserRouter.
+
+Routes
+*********
+Routes is a container that holds all your Route components.
+It checks the URL and renders the component that matches the current path.
+
+Route
+*******
+Route defines a single path and the component to render when that path matches.
+It has two main props:
+
+path → the URL path (e.g., /about)
+element → the component to display
+
+
+add toast to remove buton and add a button in product info page for go to products page

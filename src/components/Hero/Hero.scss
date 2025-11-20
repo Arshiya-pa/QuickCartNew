@@ -1,0 +1,94 @@
+@use '../../globalSass.scss' as *;
+
+.Hero {
+    border: 1px solid black;
+    height: calc(100vh - 120px);
+    margin: 15px 50px;
+    border-radius: 50px;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-image 2s ease-in-out;
+
+    // background: linear-gradient
+    // (rgba(85, 61, 222, 0.368),
+    // rgba(234, 31, 31, 0.368)), 
+    //     url('../../assets/Herowallpaper1.jpg');
+    // background-size: cover;
+
+    // overflow: hidden;
+    .first {
+        padding: 75px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+            @include font-nunito(600);
+            font-size: 25px;
+
+            @include subHeading;
+        }
+
+        h1 {
+            @include font-nunito(800);
+            font-size: 75px;
+            -webkit-text-stroke: 1px white;
+            @include mainHeading;
+        }
+    }
+
+    .second {
+        padding: 75px 0;
+
+        .brands {
+            display: flex;
+            gap: 1.5rem;
+
+            img {
+                height: 50px;
+                padding: 10px;
+                border-radius: 15px;
+                background-color: rgba(255, 255, 255, 0.391);
+            }
+        }
+        p{
+            @include font-nunito(600);
+            font-size: 18px;
+            color: rgb(180, 36, 36);
+            text-shadow: 5px 5px 5px white;
+        }
+        .indicators{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding-top: 50px;
+            button{
+                width: 12px;
+                height: 12px;
+                border: 2px solid black;
+                background-color: transparent;
+                border-radius: 50%;
+                transition: all 0.3s linear;
+                &.active{
+                    border-radius: 6px;
+                    width: 50px;
+                    background-color: white;
+                }
+                &:hover{
+                    background-color: white;
+                    transform: scale(1.3);
+                }
+            }
+
+
+        }
+    }
+}
